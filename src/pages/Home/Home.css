@@ -1,0 +1,29 @@
+
+
+.category {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+}
+
+.category .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.category .icon img {
+  height: 100px;
+  width: 80%;
+  height: auto;
+}
+.p-3{
+    border-radius: 20px;
+}
+h1{
+  margin: 15px;
+}

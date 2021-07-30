@@ -1,0 +1,14 @@
+.body-container{
+    min-height: auto;
+    background-color: #e8e9e9;
+    min-height: 500px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    margin: 10px 100px 10px;
+}
+.ad{
+    text-align: center;
+    margin-bottom: 20px;
+}
