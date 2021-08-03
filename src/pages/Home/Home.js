@@ -52,6 +52,18 @@ const categories = [
         title: "Elektr tools",
         to: "elektrs"
     },
+    {
+        icon: "	https://categories.olxcdn.com/assets/categories/olxuz/obmen-barter-1153-2x.png",
+        backColor: "rgb(255, 214, 201)",
+        title: "Changes",
+        to: "changes"
+    },
+    {
+        icon: "https://categories.olxcdn.com/assets/categories/olxuz/zhivotnye-35-2x.png",
+        backColor: "rgb(206, 221, 255)",
+        title: "Animals",
+        to: "animals"
+    },
 
 ]
 
