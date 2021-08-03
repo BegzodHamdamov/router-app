@@ -1,5 +1,4 @@
 
-
 .category {
   display: inline-block;
   margin: 20px;
@@ -27,3 +26,6 @@
 h1{
   margin: 15px;
 }
+.py-4{
+  min-height: 450px;
+}    

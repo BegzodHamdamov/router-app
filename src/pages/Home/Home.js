@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 import { FiSearch, IconName } from "react-icons/fi";
 import Containerhome from "../../containers/Containerhome/Containerhome";
+import NameForm from "../NameForm/NameForm"
 
 
 const categories = [
@@ -51,7 +52,9 @@ const categories = [
         title: "Elektr tools",
         to: "elektrs"
     },
+
 ]
+
 
 const Home = () => {
     return (
@@ -74,6 +77,7 @@ const Home = () => {
                     </Link>)
                 }
             </div>
+            <NameForm/>
             <Containerhome />
         </Container>
     )

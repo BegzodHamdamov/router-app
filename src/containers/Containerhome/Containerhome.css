@@ -1,4 +1,4 @@
-.body-container{
+ .body-container{
     min-height: auto;
     background-color: #e8e9e9;
     min-height: 500px;
@@ -12,4 +12,42 @@
     margin-top: 100px;
     text-align: center;
     margin-bottom: 20px;
+}
+.all{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.mid{
+    background-color: lightslategrey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    
+}
+.mid img{
+    width: 120px;
+    height: 120px;
+}
+.olx1{
+    background-color: rgb(160, 240, 233);
+}
+.p{
+    display: flex;
+    justify-content: center;
+}
+.w{
+    text-align: center;
+    width: 700px;
+}
+.note{
+    margin-left: 50px;   
+    padding: 40px;
+}
+.note img{
+    width: 150px;
+    height: 150px; 
 }

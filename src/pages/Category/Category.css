@@ -1,4 +1,27 @@
-.product img {
-  max-height: 200px;
-  object-fit: cover;
+
+.for-category{
+  display: flex;
+  justify-content: space-between;
+  
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+img{
+  width: 250px;
+  height: 250px;
+}
+.info{
+  display: flex;
+ align-items: flex-start;
+}
+.products{
+  display: flex;
+}
+.bot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,10 +1,26 @@
 .container{
    
     z-index: -100;
+    transition: 1s !important;
 }
 .bars{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.light {
+  background-color: rgb(236, 234, 255);
+}
+
+.light a {
+  color: rgb(23, 16, 65) !important;
+}
+
+.dark {
+  background-color: rgb(23, 16, 65);
+}
+
+.dark a {
+  color: rgb(236, 234, 255) !important;
 }
 

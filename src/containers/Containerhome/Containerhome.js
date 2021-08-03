@@ -1,5 +1,6 @@
 import "./Containerhome.css"
 import React from 'react'
+import { Button } from "reactstrap"
 
 const bases = [
     {
@@ -71,8 +72,35 @@ const Containerhome = () => {
                             <span>{v.location}</span>
                         </div>
                     </div>)
-                }
+                } 
             </div>
+            <div className="all"><Button className="btn btn-white"><h6 >Hammasini ko'rsatish</h6></Button></div>
+            <section>
+                <div className="mid">
+                    <img src="	https://static.olx.uz/static/olxuz/packed/font/2fbd23c39bff0aee6c0c84aaf60e66347d.svg"/>
+                    <h4>Olx bilan internetda biznesingizni boshlang</h4>
+                    <span>Batafsil</span>
+                </div>
+               <div className="olx1 text-center">
+               <div>
+                    <h1><b>Olx</b></h1>
+                </div>
+
+                <div className="p">
+                    <p className="w">
+                    Oʻzbekistonda 1-raqamli eʼlonlar servisi
+Oʻzbekiston xususiy eʼlonlari OLX (avvalgi torg.uz) – bu yerda izlaganingizni topasiz.
+"Eʼlon joylashtirish" tugmasiga bosib, siz istalgan mavzuga oid onlayn-eʼlonni joylashtira olasiz – ish qidirish, xizmat koʻrsatish, avtomobillar, koʻchmas mulk, elektronika va boshqalar savdosi.
+OLX Oʻzbekiston servisi yordamida siz deyarli barcha istagan narsangizni sotish yoki sotib olishingiz mumkin. Qidiruv funksiyasidan foydalanib, oʻzingizni qiziqtirgan mavzuga oid sersisda mavjud eʼlonlarni hech bir qiyinchiliksiz topa olasiz.
+OLX Oʻzbekiston – sizning ishonchli va tengi yoʻq yordamchingiz.
+                    </p>
+                </div>
+               </div>
+               <div className="note">
+                   <img src="https://static.olx.uz/static/olxuz/packed/font/2fc1ef4e9c6a6dc640b6feb727836fabc7.svg"/>
+                   <p>OLX servisining boʻlimlari: Bolalar dunyosi, Ko'chmas mulk, Transport, Ish, Hayvonlar, Uy va bog', Elektr jihozlari, Xizmatlar, Moda va stil, Xobbi, dam olish sport, Tekinga beraman, Ayirboshlash</p>
+               </div>
+            </section>
         </div>
     )
 }
