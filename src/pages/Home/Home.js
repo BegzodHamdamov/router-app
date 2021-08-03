@@ -89,8 +89,9 @@ const Home = () => {
                     </Link>)
                 }
             </div>
-            <NameForm/>
+          
             <Containerhome />
+            {/* <NameForm/> */}
         </Container>
     )
 }
