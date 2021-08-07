@@ -1,6 +1,9 @@
 import "./Containerhome.css"
 import React from 'react'
 import { Button } from "reactstrap"
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../../redux/actions';
+import ContTheme from "./ContTheme"
 
 const bases = [
     {
@@ -18,7 +21,7 @@ const bases = [
         location: "Toshkent, Olmazor tumani Kecha 14:11",
     },
     {
-        img: "https://apollo-olx.cdnvideo.ru/v1/files/w79oqqynqv5r3-UZ/image;s=644x461",
+        img: "https://apollo-olx.cdnvideo.ru/v1/files/0v7ge6rw1xsb-UZ/image;s=644x461",
         title: "Баннер тент банер установка оптм нархларда",
         price: "8 490 у.е.",
         location: "Toshkent, Mirzo-Ulug‘bek tumani 28 iyul",
@@ -42,7 +45,7 @@ const bases = [
         location: "Toshkent, Olmazor tumani Kecha 14:11",
     },
     {
-        img: "https://apollo-olx.cdnvideo.ru/v1/files/nfqwgdo7n20o1-UZ/image;s=644x461",
+        img: "https://apollo-olx.cdnvideo.ru/v1/files/zyhnerjg5n4b1-UZ/image;s=644x461",
         title: "Баннер тент банер установка оптм нархларда",
         price: "8 490 у.е.",
         location: "Toshkent, Mirzo-Ulug‘bek tumani 28 iyul",
@@ -59,9 +62,18 @@ const bases = [
 ]
 
 const Containerhome = () => {
+
+    
+    const theme = useSelector(state => state.theme);
+    console.log(theme);
+
+    const dispatch = useDispatch();
+    const toggle = () => dispatch(toggleTheme())
     return (
+       <ContTheme className={`shadow ${theme}`}>
+
         <div className="body-container">
-            <h1 className="ad">Primium Ads</h1>
+            <h1 className="ad">Primium Adds</h1>
             <div className="row">
                 {bases.map(v =>
                     <div className="col-sm-6 col-md-3">
@@ -102,6 +114,7 @@ OLX Oʻzbekiston – sizning ishonchli va tengi yoʻq yordamchingiz.
                </div>
             </section>
         </div>
+       </ContTheme>
     )
 }
 

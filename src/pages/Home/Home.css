@@ -1,8 +1,12 @@
+.py-5{
+  margin-top: 1rem !important;
+}
 
 .category {
   display: inline-block;
   margin: 20px;
   text-align: center;
+  margin-top: 50px !important;
 }
 
 .category .icon {
@@ -20,9 +24,7 @@
   width: 80%;
   height: auto;
 }
-.p-3{
-    border-radius: 20px;
-}
+
 h1{
   margin: 15px;
 }

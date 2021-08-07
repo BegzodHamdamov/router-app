@@ -1,43 +1,42 @@
 import "./Category.css"
 import React from 'react'
 import Container from "../../containers/Container";
-import datas from "../../data";
-import { useParams } from "react-router-dom";
-import { BiArrowBack, IconName } from "react-icons/bi";
+// import datas from "../../data";
+import { Redirect, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-console.log(datas);
 
 const Category = () => {
+
     const { category } = useParams();
-    console.log(category);
-    const obj = datas.filter(v => v.category == category)[0];
-    const data = obj.data;
-    console.log(obj);
-    console.log(data);
 
+    const data = useSelector(state => state.data[category]);
+
+
+    // const filterData= datas.filter(v => v.category == category);
+    // const obj =filterData.length > 0 ? filterData[0] : {};
+    // const data = obj.data;
    
-
     return (
         <Container>
+            { !data && <Redirect to="/page404" />}
             <div className="container">
                
-                <h1>    Category: {category}</h1>
+                <h1> Category: {category}</h1>
                 <div className="row">
-                    {data.map(v =>
+                    {data?.map(v =>
                         <div className="for-category">
                             <div className="products shadow rounded overflow-hidden p-2">
-                                 <img src={v.img} className=" mb-4" alt="" />
-                               <div className="info">
-                                <p className="p">{v.title}</p> <br/>                                </div>
-                               <div className="bot"> <span className="local">{v.location}</span>
-                               <span className="price">{v.price}</span>
-                            
-                               
-                               </div>
-                                
-                                
+
+                              <img src={v.img} className="imgs" alt="" />    
+                              <div className="info">
+                              <div className="titles">{v.title}</div>
+                              <div className="charges">{v.price}</div>
+                              <div className="locs"> {v.location}</div>
+                              </div>
+                                                   
                             </div>
-                        </div>)
+                       </div>)
                     }
                 </div>
             </div>

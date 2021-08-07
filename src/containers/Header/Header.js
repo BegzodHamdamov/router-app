@@ -1,41 +1,41 @@
-import './Header.css';
-import React, { useContext } from 'react'
+
+import React from 'react'
 import { Link } from 'react-router-dom';
-import ThemeContext from "./../../theme-context";
 import { Button } from 'reactstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../../redux/actions';
+import HeaderWrapper from './HeaderWrapper'
 
 
 let menu = [
     { to: "/", title: "Home" },
     { to: "/mobileapps", title: "Mobil app" },
     { to: "/Product", title: "Product" },
-    // { to: "/menu", title: <FiAlignJustify /> },
+    // { to: "/help", title: "Help" },
+    
     
 
 ]
 
 const Header = () => {
   
+    const theme = useSelector(state => state.theme);
+    console.log(theme);
 
-    const { theme, toggleTheme } = useContext(ThemeContext);
-    console.log(theme, toggleTheme);
+    const dispatch = useDispatch();
+    const toggle = () => dispatch(toggleTheme())
     return (
-        <header className={`shadow mb-3 ${theme}`}>
+     <HeaderWrapper className={`shadow mb-3 ${theme}`}>
+            
+        <header className={`shadow mb-3 mt-0`}>
             <div className="container py-3 d-flex justify-content-between align-items-center">
                 <div>
-                    {menu.map((item, value) => <Link to={item.to} key={item.to} className="me-3 btn">{item.title}</Link>)}
+                    {menu.map((item, value) => <Link to={item.to} key={item.to} className="me-3 btn text-white">{item.title}</Link>)}
                 </div>
-                {/* <Button color="primary" onClick={()=>handleClick("en")}>English</Button>
-                <Button color="primary" onClick={()=>handleClick("ru")}>Russia</Button>
-                <Button color="primary" onClick={()=>handleClick("uz")}>Uzbek</Button> */}
-                <Button onClick={toggleTheme} color={theme}>{theme == "dark" ? "Day" : "Night"}</Button>
-                {/* <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/dashboard">Dashboard</Link> */}
-                {/* <div className="bars"><FiAlignJustify /></div> */}
-
+              <Button onClick={toggle} color={theme}>{theme == "dark" ? "Day" : "Night"}</Button>
             </div>
         </header>
+        </HeaderWrapper>
     )
 }
 

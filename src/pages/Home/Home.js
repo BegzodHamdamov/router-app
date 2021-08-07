@@ -2,11 +2,12 @@ import "./Home.css"
 import React from 'react'
 import Container from "../../containers/Container";
 import { Link } from "react-router-dom";
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 import { FiSearch, IconName } from "react-icons/fi";
 import Containerhome from "../../containers/Containerhome/Containerhome";
-import NameForm from "../NameForm/NameForm"
-
+import HomeTheme from "./HomeTheme";
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../../redux/actions';
 
 const categories = [
     {
@@ -69,29 +70,42 @@ const categories = [
 
 
 const Home = () => {
-    return (
+    const theme = useSelector(state => state.theme);
+    console.log(theme);
+
+    const dispatch = useDispatch();
+    const toggle = () => dispatch(toggleTheme())
+
+       return (
         <Container>
-            <div className="container py-4">
+        <HomeTheme className={`shadow mb-3 ${theme}`}>
 
-                <InputGroup>
-
-                    <Input className="p-3" placeholder="756 839 objects" />
-                    <InputGroupText className=""><FiSearch /></InputGroupText>
-
-                </InputGroup>
-                <h1 className="text-center">Main Categories</h1>
-                {categories.map(v =>
-                    <Link to={v.to} key={v.to} className="category">
-                        <div className="icon" style={{ backgroundColor: v.backColor }}>
-                            <img src={v.icon} alt="" />
-                        </div>
-                        {v.title}
-                    </Link>)
-                }
-            </div>
+        <div className="container py-5">
+            
+        
+        
+                 <div className="task">
+                  <Input className="p-3 vf" placeholder="756 839 objects">
+                      
+                  </Input>
+                  <Button><FiSearch /></Button>
+                 </div>
+        
+        
+              <h1 className="text-center">Main Categories</h1>
+              {categories.map(v =>
+                  <Link to={v.to} key={v.to} className="category">
+                      <div className="icon" style={{ backgroundColor: v.backColor }}>
+                          <img src={v.icon} alt="" />
+                      </div>
+                      {v.title}
+                  </Link>)
+              }
+          </div>
           
-            <Containerhome />
-            {/* <NameForm/> */}
+          <Containerhome />
+
+        </HomeTheme>
         </Container>
     )
 }

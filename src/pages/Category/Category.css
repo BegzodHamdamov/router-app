@@ -1,27 +1,33 @@
 
 .for-category{
   display: flex;
-  justify-content: space-between;
-  
+
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
 }
-img{
+.products{
+display: flex;
+width: 100%;
+}
+.imgs{
   width: 250px;
   height: 250px;
+
 }
-.info{
-  display: flex;
- align-items: flex-start;
+.titles{
+  margin: 20px;
+  vertical-align: top;
 }
-.products{
+.locs{
+  margin: 20px;
   display: flex;
+  align-items: flex-end ;
 }
-.bot{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.charges{
+  margin: 20px;
+  color: black;
+  font-style: oblique;
 }

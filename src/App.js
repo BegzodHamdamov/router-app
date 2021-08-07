@@ -1,45 +1,36 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import MobileApps from './pages/About';
+import {Route, Switch} from 'react-router-dom';
+import MobileApps from './pages/Mobile';
 import Home from './pages/Home';
 import Category from './pages/Category';
 import Page404 from './containers/Page404';
-import ThemeContext from "./theme-context";
-import { useState } from 'react';
-import { Button } from 'reactstrap';
-// import { useTranslation } from 'react-i18next';
+import Help from './pages/Help';
+import Paidserveces from './pages/Paidserveces';
+
+//Redux
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 let pages = [
   { path: "/", component: <Home />, exact: true },
   { path: "/mobileapps", component: <MobileApps /> },
-  { path: "/:category", exact: true, component: <Category /> },
-  // { path: "/:category/:subcategory", component: <Category /> },
-  { component: <Page404 /> }
+  { path: "/help", component: <Help /> },
+  { path: "/paidserveces", component: <Paidserveces /> },
+  { path: "/page404", component: <Page404 /> },
+  { path: "/:category", exact: true, component: <Category />},
+  { component: <Page404 /> },
+
 ]
 
 
 function App() {
-  const [theme, setTheme] = useState("dark");
-
-  const toggleTheme = () => {
-    setTheme(theme == "dark" ? "light" : "dark")
-  }
-
-  // const { t, i18n } = useTranslation();
-
-  // function handleClick(lang) {
-  //     i18n.changeLanguage('lang');
-  // }
+ 
   return (
-    
-
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <Provider store={store}>
       <div className="App">
         <Switch>
-                 {/* <Button color="primary" onClick={()=>handleClick("en")}>English</Button>
-                <Button color="primary" onClick={()=>handleClick("ru")}>Russia</Button>
-                <Button color="primary" onClick={()=>handleClick("uz")}>Uzbek</Button> */}
+               
           {pages.map((page, index) => {
     
             return <Route path={page.path} exact={page.exact} key={page.path}>
@@ -48,7 +39,7 @@ function App() {
           })}
         </Switch>
       </div>
-    </ThemeContext.Provider>
+    </Provider>
   );
 }
 

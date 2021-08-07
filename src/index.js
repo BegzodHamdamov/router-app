@@ -10,9 +10,10 @@ import './i18next';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Suspense fallback={(<div>Loading...</div>)}>
+      {/* <Suspense fallback={(<div>Loading...</div>)}>
+      
+      </Suspense> */}
       <App />
-      </Suspense>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

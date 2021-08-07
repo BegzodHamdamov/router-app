@@ -1,0 +1,16 @@
+.container-help{
+    background-color: #f2f4f5;
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+}
+
+.p-3{
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+
+    /* border: 1px solid black; */
+}
